@@ -48,6 +48,8 @@ namespace TestHarness.Pages.Qualifications
         internal IWebElement Admin => webDriver.GetWebElement(By.CssSelector("#menu_admin_viewAdminModule"));
         internal IWebElement Qualifications => webDriver.GetWebElement(By.CssSelector("#menu_admin_Qualifications"));
         internal IWebElement Education => webDriver.GetWebElement(By.CssSelector("#menu_admin_viewEducation"));
+
+        internal IWebElement SuccessfullySaved => webDriver.GetWebElement(By.CssSelector("#recordsListDiv > div.inner > div"));
         internal ReadOnlyCollection<IWebElement> TableHeader => this.webDriver.FindElements(By.CssSelector("#recordsListTable > thead > tr > th"));
 
         internal IWebElement GetEducation(string ColumnName, CellPosition cellPosition = CellPosition.VALUE_BASE, string value = "", string Attribute = TagAttributes.Value, bool IsHyperLink = false)

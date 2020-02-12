@@ -26,14 +26,12 @@ namespace Test.Qualifications
             
         }
 
-        [TestCase("MBA", TestName = "Validate Add New Education", Author = "Anuj Jain")]
-        [TestCase("B-Tech", TestName = "Validate Add New Education", Author = "Anuj Jain")]
-        [TestCase("M-Tech", TestName = "Validate Add New Education", Author = "Anuj Jain")]
-        [TestCase("BCA", TestName = "Validate Add New Education", Author = "Anuj Jain")]
-        public void ValidateAddEducation(string education)
+        [TestCase(TestName = "Validate Add New Education", Author = "Anuj Jain")]
+        public void ValidateAddEducation()
         {
             educationStep.NavigateToEducation();
-            educationStep.AddEducation(education);
+            for(int i=0; i<=2;i++)
+                educationStep.AddEducation(RandomUtils.RandomizeAlphabeticalString(10));
         }
 
 

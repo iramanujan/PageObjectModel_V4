@@ -32,8 +32,14 @@ namespace TestHarness.Steps.Qualifications
             educationPage.Add.Click();
             educationPage.Level.SendKeys(education);
             educationPage.Save.Click();
+            if (String.IsNullOrEmpty(educationPage.SuccessfullySaved.GetTextValue().Trim()))
+            {
+                ObjReport.Pass("Validate Successfully Saved Message.", educationPage.SuccessfullySaved.Text.Trim());
+            }
             var actualEducation = educationPage.GetEducation("Level", CellPosition.VALUE_BASE, education, IsHyperLink: true).Text;
             validation.VerifyText(education, actualEducation, "Validate Education Level Added Successfully.");
+            webDriver.WaitForAjax();
+            webDriver.WaitForPage();
         }
 
         public void DeleteEducation(string education)
