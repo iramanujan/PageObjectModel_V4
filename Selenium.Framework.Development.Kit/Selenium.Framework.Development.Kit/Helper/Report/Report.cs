@@ -4,6 +4,7 @@ using AventStack.ExtentReports.Reporter.Configuration;
 using NUnit.Framework;
 using Selenium.Framework.Development.Kit.Configuration;
 using Selenium.Framework.Development.Kit.Helper.Log;
+using Selenium.Framework.Development.Kit.Helper.Utils;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -57,7 +58,7 @@ namespace Selenium.Framework.Development.Kit.Helper.Report
                 extentReports.AddSystemInfo("Application User Name:", appConfigMember.UserName);
                 extentReports.AddSystemInfo("Application Password:", appConfigMember.Password);
                 extentReports.AddSystemInfo("System User Name", Environment.UserName);
-                extentReports.AddSystemInfo("Window", name + Is64BitOperatingSystem);
+                extentReports.AddSystemInfo("Window", SystemInfo.GetWindowsInfo());
                 extentReports.AddSystemInfo("Machine Name", Environment.MachineName);
                 extentReports.AttachReporter(htmlReporter);
                 htmlReporter.LoadConfig(projectPath + "Extent-config.xml");

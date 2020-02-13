@@ -134,6 +134,7 @@
     <Compile Include="Helper\Utils\ReflectionUtils.cs" />
     <Compile Include="Helper\Utils\StepsExecutor.cs" />
     <Compile Include="Helper\Utils\StringUtils.cs" />
+    <Compile Include="Helper\Utils\SystemInfo.cs" />
     <Compile Include="Helper\Utils\TimeUtil.cs" />
     <Compile Include="Helper\Utils\TimeZoneUtil.cs" />
     <Compile Include="Helper\Utils\XMLUtils.cs" />
